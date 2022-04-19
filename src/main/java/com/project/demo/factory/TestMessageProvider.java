@@ -1,11 +1,13 @@
 package com.project.demo.factory;
 
+import com.project.demo.model.Message;
+import com.project.demo.model.SimpleMessage;
 import com.project.demo.services.IMessageProvider;
 
-class TestMessageProvider implements IMessageProvider<String> {
+final class TestMessageProvider implements IMessageProvider<Message> {
 
-	public String getMessage() {
-		return "Hello there";
-	}	
+	public Message getMessage() {
+		return new SimpleMessage("Hi there");
+	}
 
 }

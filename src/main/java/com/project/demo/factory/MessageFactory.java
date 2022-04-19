@@ -1,12 +1,13 @@
 package com.project.demo.factory;
 
+import com.project.demo.model.Message;
 import com.project.demo.services.IMessageProvider;
 import com.project.demo.services.IMessageRender;
 
 public class MessageFactory {
 	private final static MessageFactory messageFactory;
-	private IMessageProvider<String> provider = new TestMessageProvider();
-	private IMessageRender<String> render = new TestMessageRender();
+	private IMessageProvider<Message> provider = new TestMessageProvider();
+	private IMessageRender<Message> render = new TestMessageRender();
 	
 	static {
 		messageFactory = new MessageFactory();
@@ -18,11 +19,11 @@ public class MessageFactory {
 		return messageFactory;
 	}
 	
-	public IMessageProvider<String> getIMessageProvider(){
+	public IMessageProvider<Message> getIMessageProvider(){
 		return provider;
 	}
 	
-	public IMessageRender<String> getIMessageRender(){
+	public IMessageRender<Message> getIMessageRender(){
 		return render;
 	}
 	
