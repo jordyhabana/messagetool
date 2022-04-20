@@ -15,7 +15,7 @@ public class MessagetoolApplication {
 		//SpringApplication.run(MessagetoolApplication.class, args);
 
 		ApplicationContext app = new AnnotationConfigApplicationContext(TestMessageConfiguration.class);
-		IMessageRender<Message> render = app.getBean("test",IMessageRender.class);
+		IMessageRender<Message> render = app.getBean("simple-render",IMessageRender.class);
 		render.render();
 	}
 

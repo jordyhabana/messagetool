@@ -1,4 +1,4 @@
-package de.micasa.messagetool.testmessage;
+package de.micasa.messagetool.messageservice;
 
 import org.springframework.stereotype.Service;
 
@@ -6,7 +6,7 @@ import de.micasa.messagetool.model.Message;
 import de.micasa.messagetool.services.IMessageProvider;
 import de.micasa.messagetool.services.IMessageRender;
 
-@Service("test")
+@Service("test-render")
 final class TestMessageRender implements IMessageRender<Message> {
 
 	private IMessageProvider<Message> provider;
@@ -20,6 +20,7 @@ final class TestMessageRender implements IMessageRender<Message> {
 	}
 
 	public void render() {
+		System.out.println("render: " + this.getClass().getName());
 		System.out.println(provider.getMessage().getSubject());
 
 	}
