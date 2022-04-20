@@ -1,4 +1,4 @@
-package de.micasa.messagetool.factory;
+package de.micasa.messagetool.testmessage;
 
 import de.micasa.messagetool.model.Message;
 import de.micasa.messagetool.model.SimpleMessage;
