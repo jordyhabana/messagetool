@@ -6,12 +6,12 @@ import de.micasa.messagetool.model.Message;
 import de.micasa.messagetool.services.IMessageProvider;
 import de.micasa.messagetool.services.IMessageRender;
 
-@Service("test")
-final class TestMessageRender implements IMessageRender<Message> {
+@Service("mytest")
+final class MyTestMessageRender implements IMessageRender<Message> {
 
 	private IMessageProvider<Message> provider;
 
-	public TestMessageRender(IMessageProvider<Message> provider) {
+	public MyTestMessageRender(IMessageProvider<Message> provider) {
 		if (provider != null) {
 			this.provider = provider;
 		} else {
@@ -20,6 +20,7 @@ final class TestMessageRender implements IMessageRender<Message> {
 	}
 
 	public void render() {
+		System.out.println("My test message is:");
 		System.out.println(provider.getMessage().getSubject());
 
 	}
