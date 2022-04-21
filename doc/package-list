@@ -1,4 +1,5 @@
 de.micasa.messagetool
-de.micasa.messagetool.factory
+de.micasa.messagetool.controllers
 de.micasa.messagetool.model
+de.micasa.messagetool.repository
 de.micasa.messagetool.services

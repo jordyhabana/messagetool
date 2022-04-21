@@ -1,12 +1,8 @@
 package de.micasa.messagetool.model;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+class SimpleMessage extends Message {
 
-@Component("simple")
-final class SimpleMessage extends Message {
-
-    public SimpleMessage(@Value("this is a simple message") String subject) {
+	public SimpleMessage( String subject) {
 		super(subject);
 	}
 
