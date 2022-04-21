@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import de.micasa.messagetool.model.Message;
 import de.micasa.messagetool.repository.IRepository;
 
-@Service
+@Service("messageService")
 class MessageService implements IService<Message> {
 	private IRepository<Message> repository;
 

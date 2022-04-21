@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import de.micasa.messagetool.context.MyApplicationContext;
 import de.micasa.messagetool.model.Message;
 import de.micasa.messagetool.services.IService;
 
@@ -16,17 +17,23 @@ class SimpleMessageController {
 
 	private IService<Message> messageService;
 
-	@GetMapping
+	private MyApplicationContext myApplicationContext;
+
 	public List<Message> listMessages() {
 		return messageService.supplyAll();
 	}
 
+	@GetMapping("/bean")
+	public boolean bean() {
+		return myApplicationContext.containsBean("messageService");
+	}
+
 	@Autowired
-	public void setMessageService(IService<Message> messageService) {
-		if (messageService != null) {
-			this.messageService = messageService;
+	public void setMyApplicationContext(MyApplicationContext myApplicationContext) {
+		if (myApplicationContext != null) {
+			this.myApplicationContext = myApplicationContext;
 		} else {
-			throw new IllegalArgumentException(IService.class + " is missing.");
+			throw new IllegalArgumentException(" is missing.");
 		}
 	}
 
