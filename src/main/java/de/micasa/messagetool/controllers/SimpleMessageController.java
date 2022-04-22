@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import de.micasa.messagetool.Format;
+import de.micasa.messagetool.TypeMessage;
 import de.micasa.messagetool.context.MyApplicationContext;
 import de.micasa.messagetool.model.Message;
 import de.micasa.messagetool.services.IService;
@@ -19,6 +21,10 @@ class SimpleMessageController {
 
 	private MyApplicationContext myApplicationContext;
 
+	@Autowired
+	@TypeMessage(format = Format.SMS, type = "test")
+	private String message;
+
 	public List<Message> listMessages() {
 		return messageService.supplyAll();
 	}
@@ -26,6 +32,11 @@ class SimpleMessageController {
 	@GetMapping("/bean")
 	public boolean bean() {
 		return myApplicationContext.containsBean("messageService");
+	}
+
+	@GetMapping("/custom-message")
+	public String customMessage() {
+		return message;
 	}
 
 	@Autowired
