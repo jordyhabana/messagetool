@@ -14,7 +14,5 @@ public abstract class Message {
 	public String getSubject() {
 		return subject;
 	}
-	
-	
 
 }
