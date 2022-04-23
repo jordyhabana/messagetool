@@ -1,1 +1,1 @@
-# messagetool
+# messagetool 1.0
